@@ -30,12 +30,20 @@ fn main() {
     // println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
 
+    // FIX
+    println!("My name is {0}, {1} {0}", "James", "Bond");
+
     // Create a structure which contains an `i32`. Name it `Structure`.
-    // #[allow(dead_code)]
-    // struct Structure(i32);
+    #[allow(dead_code)]
+    #[derive(Debug)]
+    struct Structure(i32);
 
     // However, custom types such as this structure require more complicated
     // handling. This will not work.
     // println!("This struct `{}` won't print...", Structure(3));
     // FIXME ^ Comment out this line.
+
+    let inst = Structure(3);
+    println!("This is the struct unprettied {:?}", inst);
+    println!("This is the struct prettied {:#?}", inst);
 }
